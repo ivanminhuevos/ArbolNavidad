@@ -6,7 +6,7 @@ public class ArbolSegmento extends Objeto {
     private final boolean par;
     private final boolean initial;
 
-    private static final Polygon polySegmento = new Polygon();
+    private final Polygon polySegmento = new Polygon();
 
     private void recomputePoly() {
         int posX = this.getX();
