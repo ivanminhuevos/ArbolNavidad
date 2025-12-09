@@ -22,7 +22,7 @@ public abstract class Objeto {
         return this.h;
     }
 
-    public void setDimensions(int x, int y, int w, int h) {
+    public void setPosScale(int x, int y, int w, int h) {
         this.x = x;
         this.y = y;
         this.w = w;
@@ -31,7 +31,7 @@ public abstract class Objeto {
         onResize();
     }
 
-    public void setDimensions(Rectangle rect) {
+    public void setPosScale(Rectangle rect) {
         this.x = (int) rect.getX();
         this.y = (int) rect.getY();
         this.w = (int) rect.getWidth();

@@ -85,7 +85,7 @@ public class ArbolWindow_backup extends JPanel {
 
     public void init() {
         this.arbol = new Arbol(8);
-        arbol.setDimensions(128, 64, 256, 512 - 128);
+        arbol.setPosScale(128, 64, 256, 512 - 128);
     }
 
 

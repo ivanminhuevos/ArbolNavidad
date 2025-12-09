@@ -45,8 +45,8 @@ public class Arbol extends Objeto {
             double altoVal = altoVals[i];
             double HSub = posH * altoVal;
 
-            ArbolSegmento seg = new ArbolSegmento((i % 2 == 0), i == 0);
-            seg.setDimensions((int) (posX + (invWSub * 0.5)), (int) yAccum, (int) (posW * inviDelta), (int) HSub + 1);
+            ArbolSegmento seg = new ArbolSegmento((i % 2 == 0), i == 0, i * 2);
+            seg.setPosScale((int) (posX + (invWSub * 0.5)), (int) yAccum, (int) (posW * inviDelta), (int) HSub + 1);
 
             segments[(segmentCount - 1) - i] = seg;
 
@@ -66,7 +66,7 @@ public class Arbol extends Objeto {
         int posH = this.getH();
 
 
-        estrella.setDimensions(posX + (posW / 2), posY - 12, 16, 16);
+        estrella.setPosScale(posX + (posW / 2), posY - 12, 16, 16);
         initSegments();
     }
 
@@ -89,10 +89,6 @@ public class Arbol extends Objeto {
         g.setColor(COLOR_TRONCO);
         g.fillRect( posX + (posW / 2) - (troncoW / 2), posH + troncoH, troncoW, troncoH);
 
-
-        g.setColor(Color.RED);
-        g.drawRect(posX, posY, posW, posH);
-
         ArbolSegmento seg;
         for(int i = 0; i < segments.length; i++) {
             seg = segments[i];
@@ -100,8 +96,9 @@ public class Arbol extends Objeto {
             seg.draw(g);
         }
 
-        g.setColor(Color.RED);
-        g.fillRect(posX + (posW / 2), posY, 1, posH);
+        //g.setColor(Color.RED);
+        //g.drawRect(posX, posY, posW, posH);
+        //g.fillRect(posX + (posW / 2), posY, 1, posH);
 
         estrella.draw(g);
     }

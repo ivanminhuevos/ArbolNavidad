@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -14,7 +15,7 @@ public class Main {
     public static void main(String[] args) {
         readArgs();
 
-        Frame window = new Frame();
+        Frame window = new JFrame();
 
         Dimension scrSize = Toolkit.getDefaultToolkit().getScreenSize();
 
@@ -26,11 +27,14 @@ public class Main {
 
         ArbolWindow arb = new ArbolWindow();
         arb.setSize(800 - 8, 600 - 32 - 8);
-        arb.setLocation(8, 32);
+        arb.setLocation(0, 0);
 
         arb.init();
 
         window.add(arb);
+
+        boolean stop = false;
+
 
         window.addWindowListener(new WindowAdapter() {
             @Override

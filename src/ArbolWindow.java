@@ -1,16 +1,11 @@
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.*;
-import java.net.URISyntaxException;
-import java.net.URL;
 
 public class ArbolWindow extends JPanel {
     private Arbol arbol;
     public void init() {
         this.arbol = new Arbol(8);
-        arbol.setDimensions(128, 64, 256, 512 - 128);
+        arbol.setPosScale(128, 64, 256, 512 - 128);
     }
 
 
