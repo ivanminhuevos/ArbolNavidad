@@ -8,6 +8,21 @@ public class ArbolWindow extends JPanel {
         arbol.setPosScale(128, 64, 256, 512 - 128);
     }
 
+    public void init(int segmentos, boolean estrella) {
+        this.arbol = new Arbol(segmentos, estrella);
+        arbol.setPosScale(128, 64, 256, 512 - 128);
+    }
+
+    public void init(int segmentos, boolean estrella, int ornamentos) {
+        this.arbol = new Arbol(segmentos, estrella, ornamentos);
+        arbol.setPosScale(128, 64, 256, 512 - 128);
+    }
+
+
+    public void repaintOrnamentos() {
+        this.arbol.repaintOrnamentos();
+    }
+
 
     @Override
     protected void paintComponent(Graphics g) {

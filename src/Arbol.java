@@ -5,6 +5,7 @@ public class Arbol extends Objeto {
 
     private ArbolSegmento[] segments;
     private int segmentCount;
+    private int ornamentos = 0;
     private boolean segmentsInit = false;
 
     private ArbolEstrella estrella;
@@ -45,7 +46,7 @@ public class Arbol extends Objeto {
             double altoVal = altoVals[i];
             double HSub = posH * altoVal;
 
-            ArbolSegmento seg = new ArbolSegmento((i % 2 == 0), i == 0, i * 2);
+            ArbolSegmento seg = new ArbolSegmento((i % 2 == 0), i == 0, (int) Math.ceil(ornamentos * altoVal));
             seg.setPosScale((int) (posX + (invWSub * 0.5)), (int) yAccum, (int) (posW * inviDelta), (int) HSub + 1);
 
             segments[(segmentCount - 1) - i] = seg;
@@ -65,8 +66,9 @@ public class Arbol extends Objeto {
         int posW = this.getW();
         int posH = this.getH();
 
-
-        estrella.setPosScale(posX + (posW / 2), posY - 12, 16, 16);
+        if(this.estrella != null) {
+            estrella.setPosScale(posX + (posW / 2), posY - 12, 16, 16);
+        }
         initSegments();
     }
 
@@ -100,9 +102,19 @@ public class Arbol extends Objeto {
         //g.drawRect(posX, posY, posW, posH);
         //g.fillRect(posX + (posW / 2), posY, 1, posH);
 
-        estrella.draw(g);
+        if(this.estrella != null) {
+            estrella.draw(g);
+        }
     }
 
+    public void repaintOrnamentos() {
+        ArbolSegmento seg;
+        for(int i = 0; i < segments.length; i++) {
+            seg = segments[i];
+
+            seg.repaintOrnamentos();
+        }
+    }
 
 
     public Arbol(int segmentCount) {
@@ -111,6 +123,26 @@ public class Arbol extends Objeto {
 
 
         this.estrella = new ArbolEstrella();
+    }
 
+    public Arbol(int segmentCount, boolean doEstrella) {
+        this.segmentCount = segmentCount;
+        this.segments = new ArbolSegmento[segmentCount];
+
+
+        if(doEstrella) {
+            this.estrella = new ArbolEstrella();
+        }
+    }
+
+    public Arbol(int segmentCount, boolean doEstrella, int ornamentos) {
+        this.segmentCount = segmentCount;
+        this.segments = new ArbolSegmento[segmentCount];
+
+        this.ornamentos = ornamentos;
+
+        if(doEstrella) {
+            this.estrella = new ArbolEstrella();
+        }
     }
 }

@@ -9,6 +9,12 @@ public class Ornamento extends Objeto {
     private final Color COLOR_HIGHLIGHT_A = new Color(255, 255, 255, 128);
     private final Color COLOR_HIGHLIGHT_B = new Color(255, 255, 255, 196);
 
+    private float offsetCurtime = 0;
+
+    public Ornamento() {
+        this.offsetCurtime = (float) Math.random();
+    }
+
     public void draw(Graphics g) {
         int posX = this.getX();
         int posY = this.getY();
@@ -16,7 +22,9 @@ public class Ornamento extends Objeto {
         int posW = this.getW();
         int posH = this.getH();
 
-        g.setColor(COLOR_A);
+        Color c = Color.getHSBColor((float) Main.getCurTime() + this.offsetCurtime, 0.9f, 0.8f);
+
+        g.setColor(c);
         g.fillOval(posX - posW / 2, posY, posW, posH);
 
         g.setColor(COLOR_HIGHLIGHT_A);
