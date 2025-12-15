@@ -29,12 +29,14 @@ public class Main {
         PALABRAS_A_BOOLEAN.put("verdadero", true);
         PALABRAS_A_BOOLEAN.put("porfa", true);
         PALABRAS_A_BOOLEAN.put("porfavor", true);
+        PALABRAS_A_BOOLEAN.put("1", true);
 
         PALABRAS_A_BOOLEAN.put("no", false);
         PALABRAS_A_BOOLEAN.put("n", false);
         PALABRAS_A_BOOLEAN.put("false", false);
         PALABRAS_A_BOOLEAN.put("falso", false);
         PALABRAS_A_BOOLEAN.put("no quiero", false);
+        PALABRAS_A_BOOLEAN.put("0", true);
     }
 
     private static boolean nextNiceBoolean() {
