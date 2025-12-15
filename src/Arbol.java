@@ -6,6 +6,7 @@ public class Arbol extends Objeto {
     private ArbolSegmento[] segments;
     private int segmentCount;
     private int ornamentos = 0;
+    private boolean tronco = false;
     private boolean segmentsInit = false;
 
     private ArbolEstrella estrella;
@@ -84,12 +85,15 @@ public class Arbol extends Objeto {
         int posW = this.getW();
         int posH = this.getH();
 
-        int troncoW = 48;
-        int troncoH = 64;
 
-        // dibuja el tronco
-        g.setColor(COLOR_TRONCO);
-        g.fillRect( posX + (posW / 2) - (troncoW / 2), posH + troncoH, troncoW, troncoH);
+        if(tronco) {
+            int troncoW = 48;
+            int troncoH = 64;
+
+            // dibuja el tronco
+            g.setColor(COLOR_TRONCO);
+            g.fillRect(posX + (posW / 2) - (troncoW / 2), posH + troncoH, troncoW, troncoH);
+        }
 
         ArbolSegmento seg;
         for(int i = 0; i < segments.length; i++) {
@@ -107,29 +111,12 @@ public class Arbol extends Objeto {
         }
     }
 
-    public Arbol(int segmentCount) {
-        this.segmentCount = segmentCount;
-        this.segments = new ArbolSegmento[segmentCount];
-
-
-        this.estrella = new ArbolEstrella();
-    }
-
-    public Arbol(int segmentCount, boolean doEstrella) {
-        this.segmentCount = segmentCount;
-        this.segments = new ArbolSegmento[segmentCount];
-
-
-        if(doEstrella) {
-            this.estrella = new ArbolEstrella();
-        }
-    }
-
-    public Arbol(int segmentCount, boolean doEstrella, int ornamentos) {
+    public Arbol(int segmentCount, boolean doEstrella, int ornamentos, boolean tronco) {
         this.segmentCount = segmentCount;
         this.segments = new ArbolSegmento[segmentCount];
 
         this.ornamentos = ornamentos;
+        this.tronco = tronco;
 
         if(doEstrella) {
             this.estrella = new ArbolEstrella();

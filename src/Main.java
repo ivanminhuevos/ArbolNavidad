@@ -53,12 +53,15 @@ public class Main {
         System.out.print("Quieres estrella? >");
         boolean estrella = nextNiceBoolean();
 
+        System.out.print("Quieres tronco? >");
+        boolean tronco = nextNiceBoolean();
+
         ArbolWindow arb = new ArbolWindow();
         arb.setSize(800 - 8, 600 - 32 - 8);
         arb.setLocation(0, 0);
         arb.setOpaque(true);
 
-        arb.init(segmentos, estrella, ornamentos);
+        arb.init(segmentos, estrella, ornamentos, tronco);
 
         window.add(arb);
 

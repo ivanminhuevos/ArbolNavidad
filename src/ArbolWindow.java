@@ -3,18 +3,9 @@ import java.awt.*;
 
 public class ArbolWindow extends JPanel {
     private Arbol arbol;
-    public void init() {
-        this.arbol = new Arbol(8);
-        arbol.setPosScale(128, 64, 256, 512 - 128);
-    }
 
-    public void init(int segmentos, boolean estrella) {
-        this.arbol = new Arbol(segmentos, estrella);
-        arbol.setPosScale(128, 64, 256, 512 - 128);
-    }
-
-    public void init(int segmentos, boolean estrella, int ornamentos) {
-        this.arbol = new Arbol(segmentos, estrella, ornamentos);
+    public void init(int segmentos, boolean estrella, int ornamentos, boolean tronco) {
+        this.arbol = new Arbol(segmentos, estrella, ornamentos, tronco);
         arbol.setPosScale(128, 64, 256, 512 - 128);
     }
 
