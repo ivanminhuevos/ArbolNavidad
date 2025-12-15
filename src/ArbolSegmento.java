@@ -96,12 +96,6 @@ public class ArbolSegmento extends Objeto {
         }
     }
 
-    public void repaintOrnamentos() {
-        for(int i = 0; i < numOrnamentos; i++) {
-            //ornamentos[i].repaint();
-        }
-    }
-
     public void draw(Graphics g) {
         g.setColor(par ? COLOR_HOJA_A : COLOR_HOJA_B);
         g.fillPolygon(polySegmento);

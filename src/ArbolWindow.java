@@ -18,12 +18,6 @@ public class ArbolWindow extends JPanel {
         arbol.setPosScale(128, 64, 256, 512 - 128);
     }
 
-
-    public void repaintOrnamentos() {
-        this.arbol.repaintOrnamentos();
-    }
-
-
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g); // llama el paint de JPanel

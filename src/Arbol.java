@@ -107,16 +107,6 @@ public class Arbol extends Objeto {
         }
     }
 
-    public void repaintOrnamentos() {
-        ArbolSegmento seg;
-        for(int i = 0; i < segments.length; i++) {
-            seg = segments[i];
-
-            seg.repaintOrnamentos();
-        }
-    }
-
-
     public Arbol(int segmentCount) {
         this.segmentCount = segmentCount;
         this.segments = new ArbolSegmento[segmentCount];
