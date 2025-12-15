@@ -45,7 +45,7 @@ public class Main {
 
 
     private static ArbolWindow readArgsAndBuildTree(JFrame window) {
-        int segmentos = nextIntRange("Cuantos segmentos? (1-16) >", 1, 16);
+        int segmentos = nextIntRange("Cuantos ramas? (1-16) >", 1, 16);
         int ornamentos = nextIntRange("Cuantos ornamentos? (0-64) >", 0, 64);
 
         System.out.print("Quieres estrella? >");
