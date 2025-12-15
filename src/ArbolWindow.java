@@ -38,27 +38,5 @@ public class ArbolWindow extends JPanel {
         g.fillRect(x, y, w, h);
 
         arbol.draw(g);
-
-        /*
-        URL path = Main.class.getResource("alvaro.jpg");
-        File file;
-        try {
-            file = new File(path.toURI());
-        } catch (URISyntaxException e) {
-            throw new RuntimeException(e);
-        }
-         */
-
-        /*
-        Image img;
-        try {
-            img = ImageIO.read(file);
-        } catch (IOException e) {
-            System.out.println("Imagen no encontrada!");
-            throw new RuntimeException(e);
-        }
-        */
-
-        //g.drawImage(img, 0, 0, null);
     }
 }
